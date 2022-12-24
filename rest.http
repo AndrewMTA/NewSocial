@@ -1,0 +1,13 @@
+
+
+
+
+
+PUT  http://localhost:5000/user/63a3f1c57a1139e16041be9d
+Content-Type: application/json
+
+{
+    "bio":"Tech ocggtgused ",
+    "work":"@media company",
+    "position":"CEO"
+}

@@ -1,0 +1,48 @@
+.Modal {
+    position: absolute;
+    padding: 100px;
+    padding-bottom: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    padding-top: 200px;
+    border-radius: 10px;
+}
+
+.OverLay {
+    background-color: rgba(0, 0, 0, 0.263);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.modalPic {
+    width: 100px;
+    height: 100px;
+    border-radius: 200px;
+    margin-top: -110px;
+    margin-left: 0px;
+    position: absolute;
+}
+
+
+.modalInput {
+    margin-top: 30px;
+    padding: 10px 50px;
+}
+.Close {
+    align-self: end;
+    position: absolute;
+    margin-top: -180px;
+    margin-left: 370px;
+    background-color: rgba(0, 0, 255, 0.382);
+}
+
+.inputWrap {
+    display: flex;
+    flex-direction: column;
+}

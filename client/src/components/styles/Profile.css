@@ -1,0 +1,55 @@
+.icon2 {
+    width: 20px;
+    vertical-align: -5px;
+}
+
+.textWraped {
+    padding-bottom: 30px;
+    margin-top: 48px;
+}
+
+.buttonsWraper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.profileColumn {
+    width: 700px;
+    margin-left: 45px;
+    margin-top: 30px;
+    
+    }
+
+    .position {
+        margin-left: 6px;
+    }
+
+    .Edit {
+        margin-left: 50px;
+        background-color: rgb(33, 33, 164);
+        color: aliceblue;
+        padding: 5px;
+        margin-top: -6px;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+.NameBox {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+    .profilePic {
+        width: 100px;
+        height: 100px;
+        border-radius: 200px;
+        margin-top: 90px;
+        margin-left: 20px;
+        position: absolute;
+    }
+
+    .profileContainer {
+        padding-bottom: 150px;
+    
+    }
+    
