@@ -22,7 +22,7 @@ export default function Navbar() {
     <div className='Options'>
   
     <div className='navOption'><img className='icon2' src={Home}/> <a className="route" href='/'>Home</a></div>
-    <div className='navOption'><img  className='icon2' src={Profile}/><a className="route" href={`/user/${user._id}`}>Profile</a></div>
+    <div className='navOption'><img  className='icon2' src={Profile}/><a className="route" href={`/user/`}>Profile</a></div>
     <div className='navOption'><img  className='icon2' src={Messages}/><a className="route"  href='/messages'>Messages</a></div>
     <div  onClick={handleLogout} className='navOption'><img  className='icon2' src={Messages}/><a className="route"  href='/messages'>Logout</a></div>
     </div>

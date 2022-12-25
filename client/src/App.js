@@ -4,7 +4,7 @@ import Messages from "./components/Messages";
 import Profile from "./components/Profile";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { AppContext, socket } from "./context/appContext";
+
 import { useSelector } from "react-redux";
 import { useState } from "react";
 
@@ -18,7 +18,7 @@ function App() {
     const [newMessages, setNewMessages] = useState({});
     const user = useSelector((state) => state.user);
     return (
-        <AppContext.Provider value={{ socket, currentRoom, setCurrentRoom, members, setMembers, messages, setMessages, privateMemberMsg, setPrivateMemberMsg, rooms, setRooms, newMessages, setNewMessages }}>
+     
 
     <BrowserRouter>
       <Routes>
@@ -31,13 +31,13 @@ function App() {
                     )}
            
             
-            <Route path="/user/:_id" element={<Profile/>}/>       
+            <Route path="/user/" element={<Profile/>}/>       
    
       <Route path="/messages" element={<Messages/>}/>
     
       </Routes>
       </BrowserRouter>
-      </AppContext.Provider>
+ 
   );
 }
 

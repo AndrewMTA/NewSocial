@@ -85,6 +85,15 @@ textarea {
 
 }
 
+textarea:focus {
+    border: 0ch;
+    outline: none;
+    border-bottom: 1px solid rgb(43, 131, 230) ;
+
+    transition: .3s ease-in-out;
+    
+}
+
 .postsColumn {
 width: 620px;
 margin-left: 45px;
@@ -134,13 +143,24 @@ margin-top: 30px;
 
 }
 
+.PostWrapper {
+    display:flex ;
+}
+
 .postBox {
     display: flex;
-
+flex-direction: column;
 background-color: white;
 border-radius: 5px;
 border-bottom-left-radius: 0px;
 border-bottom-right-radius: 0px;
+}
+
+.PostTitle {
+    margin: 0;
+    margin-left: 15px;
+    margin-bottom: 5px;
+    margin-top: 5px;
 }
 .profile {
     width: 63px;

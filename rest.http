@@ -3,11 +3,9 @@
 
 
 
-PUT  http://localhost:5000/user/63a3f1c57a1139e16041be9d
+POST  http://localhost:5000/posts/create
 Content-Type: application/json
 
 {
-    "bio":"Tech ocggtgused ",
-    "work":"@media company",
-    "position":"CEO"
+    "description": "hello world joe mama"
 }

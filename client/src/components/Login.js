@@ -19,7 +19,7 @@ function Login() {
               // socket work
               socket.emit("new-user");
               // navigate to the chat
-              navigate("/user/:_id");
+              navigate("/user/");
           }
       });
   };
