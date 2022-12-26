@@ -8,13 +8,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 
 const Modal = ({ open, onClose }) => {
-  const user = useSelector((state) => state.user);
-  const {_id} = useParams();
+  const user = useSelector(state => state.user);
+  const { _id } = user;
 
   const [bio, setIsBio] = useState("");
   const [position, setIsPosition] = useState("");
   const [work, setIsWork] = useState("");
-  const [update] = useUpdateUserMutation();
+  const [updateUser] = useUpdateUserMutation();
 
   useEffect(()=> {
     axios.get('/user/' + _id)
@@ -29,8 +29,8 @@ const Modal = ({ open, onClose }) => {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // login logic
-    update({ _id, bio, position, work }).then(({ data }) => {
+    // update logic
+    updateUser({_id, bio, position, work}).then(({ data }) => {
       if (data) {
         alert("profile updated")
       }
@@ -60,12 +60,12 @@ const Modal = ({ open, onClose }) => {
             placeholder="Position"
           />
           <input
-          
+            value={bio}
             onChange={(e) => setIsBio(e.target.value)}
             className="modalInput"
             placeholder="Bio"
           />
-         
+
         </div>
         <button type="submit">
             Save

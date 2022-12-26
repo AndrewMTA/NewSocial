@@ -5,18 +5,18 @@ import Design from "./assets/Design.jpg"
 function Register() {
   const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-  
+
     const [signupUser, { isLoading, error }] = useSignupUserMutation();
     const navigate = useNavigate();
 
     async function handleSignup(e) {
       e.preventDefault();
-     
+
       // signup the user
       signupUser({email, password}).then(({ data }) => {
           if (data) {
               console.log(data);
-              navigate("/user/:_id");
+              navigate("/user/");
           }
       });
   };
@@ -37,7 +37,7 @@ function Register() {
             type="email"
             name="email"
             placeholder="Email"
-            onChange={(e) => setEmail(e.target.value)} value={email} 
+            onChange={(e) => setEmail(e.target.value)} value={email}
           />
         </div>
         <div>
@@ -47,7 +47,7 @@ function Register() {
             placeholder="Password"
             name="password"
             onChange={(e) => setPassword(e.target.value)} value={password} />
-          
+
         </div>
         <div>
         <label htmlFor="password">Confirm Password</label>
@@ -55,7 +55,7 @@ function Register() {
             type="password"
             placeholder=" Confirm Password"
             name="password"
-          
+
           />
         </div>
         <button type="submit">Submit</button>
@@ -63,7 +63,7 @@ function Register() {
           Already have an account ?<Link to="/login">Login</Link>
         </span>
       </form>
- 
+
       </div>
     </div>
   );
