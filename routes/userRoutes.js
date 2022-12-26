@@ -38,12 +38,13 @@ router.post('/', async(req, res)=> {
 
 //update bio
 router.put('/:id', async(req, res)=> {
-  
+
   try {
     const id = req.params.id
     const updates = req.body
 
-    const result = await User.findByIdAndUpdate(id, updates);
+    // https://stackoverflow.com/questions/30419575/mongoose-findbyidandupdate-not-returning-correct-model
+    const result = await User.findByIdAndUpdate(id, updates, {new: true});
     res.send(result)
   } catch (error) {
     console.log(error.message)
