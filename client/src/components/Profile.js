@@ -11,9 +11,9 @@
       const [isOpen, setIsOpen] = useState(false)
       return (
         <div className='Container'>
-             
+
             <Navbar/>
-         
+
             <div className='MainContent'>
             <div className='Header'>
               <div>Profile</div>
@@ -26,45 +26,47 @@
                   <img className='profilePic' src={ProfilePic}/>
                   </div>
                   <div className='textWrap'>
-       
+
                   <div className='buttonsWrap'>
                     <div></div>
-           
+
                   </div>
                   </div>
                 </div>
                 <div className='posts'>
                   <div className='dummyPost'>
                   <div className='picContainer'>
-            
+
                   </div>
                   <div className='textWraped'>
-                 <div className='NameBox'><b>New User</b><i className='position'> {user.position}{user.work}</i><div onClick={() => setIsOpen(true)} className='Edit'>Edit Profile</div></div>
-               {user.bio}
-                  <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
+                 <div className='NameBox'><b>New User</b><i className='position'> {user?.position || ''}{user?.work || ''}</i><div onClick={() => setIsOpen(true)} className='Edit'>Edit Profile</div></div>
+               {user?.bio || ''}
+                  {
+                    <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
+                  }
                   <div className='buttonsWraper'>
                     <span><b>Recent Posts</b></span>
                     </div>
                   </div>
                   </div>
-            
+
 
                   </div>
                 </div>
 
               </div>
-             
+
 
             </div>
 
           </div>
-          
 
-           
-   
 
- 
+
+
+
+
       )
     }
-    
+
     export default Profile

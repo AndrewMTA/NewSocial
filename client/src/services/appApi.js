@@ -8,7 +8,7 @@ const appApi = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: "http://localhost:5000",
     }),
-   
+
     endpoints: (builder) => ({
         // creating the user
         signupUser: builder.mutation({
@@ -21,8 +21,8 @@ const appApi = createApi({
 
         //update info
         updateUser: builder.mutation({
-            query: ({user}) => ({
-                url: `/user/63a3f1c57a1139e16041be9d`,
+            query: (user) => ({
+                url: `/user/${user._id}`,
                 method: "PUT",
                 body: user,
             }),
