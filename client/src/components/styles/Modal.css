@@ -20,15 +20,43 @@
     bottom: 0;
 }
 
-.modalPic {
-    width: 100px;
-    height: 100px;
-    border-radius: 200px;
-    margin-top: -110px;
-    margin-left: 0px;
-    position: absolute;
+.picContainer {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  margin-top: -110px;
+  margin-left: 0px;
+  position: absolute;
+  cursor: pointer;
+  padding: 0 !important;
+  border-radius: 100%;
 }
 
+.picContainer:hover > img:nth-child(1) {
+  filter: brightness(98%);
+}
+
+.picContainer:hover > img:nth-child(2) {
+  filter: brightness(120%);
+}
+
+.modalPic {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  border: 0px solid white;
+  object-fit: cover;
+}
+
+.editPic {
+  width: 16px;
+  height: 16px;
+  border-radius: 100%;
+  border: 2px solid white;
+  position: absolute;
+  right: 5px;
+  bottom: 4px;
+}
 
 .modalInput {
     margin-top: 30px;

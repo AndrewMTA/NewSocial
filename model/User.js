@@ -25,7 +25,7 @@ const UserSchema = new mongoose.Schema({
     type: String
   },
   picture: {
-    type: String,
+    type: String
   },
   newMessages: {
     type: Object,

@@ -18,7 +18,7 @@
     width: 700px;
     margin-left: 45px;
     margin-top: 30px;
-    
+
     }
 
     .position {
@@ -46,10 +46,10 @@
         margin-top: 90px;
         margin-left: 20px;
         position: absolute;
+        object-fit: cover;
     }
 
     .profileContainer {
         padding-bottom: 150px;
-    
+
     }
-    

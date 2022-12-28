@@ -28,6 +28,21 @@ const appApi = createApi({
             }),
         }),
 
+        //upload picture
+        uploadUserPicture: builder.mutation({
+            query: (user) => ({
+                  url: `/user/${user._id}`,
+                  method: "POST",
+                  body: (() => {
+                    const formData = new FormData();
+                    if (user && user.picture) {
+                      formData.append('file', user.picture);
+                    }
+                    return formData;
+                  })()
+            }),
+        }),
+
         // login
         loginUser: builder.mutation({
             query: (user) => ({
@@ -38,7 +53,6 @@ const appApi = createApi({
         }),
 
         // logout
-
         logoutUser: builder.mutation({
             query: (payload) => ({
                 url: "/logout",
@@ -49,6 +63,6 @@ const appApi = createApi({
     }),
 });
 
-export const { useSignupUserMutation, useLoginUserMutation, useLogoutUserMutation, useUpdateUserMutation, } = appApi;
+export const { useSignupUserMutation, useLoginUserMutation, useLogoutUserMutation, useUpdateUserMutation, useUploadUserPictureMutation } = appApi;
 
 export default appApi;

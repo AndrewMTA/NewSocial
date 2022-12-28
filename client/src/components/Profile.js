@@ -8,6 +8,7 @@
 
     const Profile = () => {
       const user = useSelector((state) => state.user);
+      const { picture } = user || {};
       const [isOpen, setIsOpen] = useState(false)
       return (
         <div className='Container'>
@@ -23,7 +24,7 @@
               <div className='profileColumn'>
                 <div className='postBox'>
                   <div className='profileContainer'>
-                  <img className='profilePic' src={ProfilePic}/>
+                    <img className='profilePic' src={picture || ProfilePic}/>
                   </div>
                   <div className='textWrap'>
 

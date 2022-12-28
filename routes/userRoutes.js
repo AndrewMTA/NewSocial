@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const multer = require('multer');
 const User = require('../model/User');
 
 // creating user
@@ -40,16 +41,17 @@ router.post('/', async(req, res)=> {
 router.put('/:id', async(req, res)=> {
 
   try {
-    const id = req.params.id
-    const updates = req.body
+    const id = req.params.id;
+    const updates = req.body;
 
     // https://stackoverflow.com/questions/30419575/mongoose-findbyidandupdate-not-returning-correct-model
     const result = await User.findByIdAndUpdate(id, updates, {new: true});
-    res.send(result)
+    res.send(result);
   } catch (error) {
-    console.log(error.message)
+    console.log(error.message);
   }
-  })
+})
+
 
 // login user
 
@@ -65,5 +67,24 @@ router.post('/login', async(req, res)=> {
   }
 })
 
+
+//update picture
+const storage = multer.memoryStorage();
+const upload = multer({ storage: storage });
+router.post('/:id', upload.single('file'), async(req, res, next) => {
+  try {
+    const id = req.params.id;
+    const base64 = req.file.buffer.toString('base64');
+    const updates = { picture: `data:${req.file.mimetype};base64,${base64}` };
+    // console.log(updates);
+
+    // https://stackoverflow.com/questions/30419575/mongoose-findbyidandupdate-not-returning-correct-model
+    const result = await User.findByIdAndUpdate(id, updates, {new: true});
+    res.send(result);
+  } catch (error) {
+    console.log('error in post update picture')
+    console.log(error.message);
+  }
+})
 
 module.exports = router

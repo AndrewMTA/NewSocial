@@ -12,16 +12,17 @@
     import Comment from './assets/Comment.png'
     import Navbar from "./Navbar";
     import { useState, useNavigate, useEffect } from 'react'
-import { useSelector} from 'react-redux'
+    import { useSelector} from 'react-redux'
     import axios from 'axios'
     const HomeScreen = () => {
+      const user = useSelector((state) => state.user);
+      const { picture } = user || {};
 
-  
       const [post, setPost] = useState({
         title: "",
         description: "",
       });
-    
+
       const handleChange = (e) => {
         const { name, value } = e.target;
         setPost((prev) => {
@@ -50,7 +51,7 @@ import { useSelector} from 'react-redux'
       return (
         <div className='Container'>
           <Navbar/>
-         
+
           <div className='MainContent'>
             <div className='Header'>
               <div>home</div>
@@ -58,15 +59,15 @@ import { useSelector} from 'react-redux'
             </div>
             <div className='innerColumns'>
               <div className='postsColumn'>
-            
+
                 <div className='postBox'>
                     <h3 className='PostTitle'>News Feed</h3>
               <div className='PostWrapper'>
                   <div className='picContainer'>
-                    <img className='profile' src={Profile}/>
+                    <img className='profile' src={picture || Profile}/>
                   </div>
                   <div className='textWrap'>
-              
+
                   <textarea onChange={handleChange} value={post.description} placeholder="What's new?"/>
                   <div className='buttonsWrap'>
                     <div></div>
@@ -76,7 +77,7 @@ import { useSelector} from 'react-redux'
                 </div>
                 </div>
                 <div className='posts'>
-                  
+
                 </div>
 
               </div>
@@ -91,9 +92,9 @@ import { useSelector} from 'react-redux'
             </div>
 
           </div>
-          
+
          </div>
       )
     }
-    
+
     export default HomeScreen
