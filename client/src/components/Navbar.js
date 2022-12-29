@@ -11,11 +11,15 @@ export default function Navbar() {
   const navigate = useNavigate();
   const user = useSelector((state) => state.user);
   const [logoutUser] = useLogoutUserMutation();
-  async function handleLogout(e) {
+  async function onLogout(e) {
+    if (user) {
       e.preventDefault();
       await logoutUser(user);
       // redirect to home page
-      window.location.replace("/login");
+
+    }
+    
+    window.location.replace("/login");
   }
 
   return (
@@ -23,10 +27,10 @@ export default function Navbar() {
       <div className='SideNav'>
     <div className='Options'>
 
-    <div onClick={()=> { navigate('/') }} className='navOption'><img className='icon2' src={Home}/><span class="route">Home</span></div>
-    <div onClick={()=> { navigate('/user') }} className='navOption'><img  className='icon2' src={Profile}/><span class="route">Profile</span></div>
-    <div onClick={()=> { navigate('/messages') }} className='navOption'><img  className='icon2' src={Messages}/><span class="route">Messages</span></div>
-    <div onClick={handleLogout} className='navOption'><img  className='icon2' src={Logout}/><span class="route">Logout</span></div>
+    <div onClick={()=> { navigate('/') }} className='navOption'><img className='icon2' src={Home}/><span className="route">Home</span></div>
+    <div onClick={()=> { navigate('/user') }} className='navOption'><img  className='icon2' src={Profile}/><span className="route">Profile</span></div>
+    <div onClick={()=> { navigate('/messages') }} className='navOption'><img  className='icon2' src={Messages}/><span className="route">Messages</span></div>
+    <div onClick={onLogout} className='navOption'><img  className='icon2' src={Logout}/><span className="route">Logout</span></div>
     </div>
 
   </div>

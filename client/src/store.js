@@ -1,5 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
 import userSlice from "./features/userSlice";
+import postsSlice from "./features/postsSlice";
 import appApi from "./services/appApi";
 
 // persist our store
@@ -12,6 +13,7 @@ import thunk from "redux-thunk";
 // reducers
 const reducer = combineReducers({
     user: userSlice,
+    posts: postsSlice,
     [appApi.reducerPath]: appApi.reducer,
 });
 

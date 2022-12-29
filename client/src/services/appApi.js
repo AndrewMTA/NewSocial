@@ -60,9 +60,35 @@ const appApi = createApi({
                 body: payload,
             }),
         }),
+
+        // create Post
+        createPost: builder.mutation({
+            query: (payload) => ({
+                url: "/posts",
+                method: "POST",
+                body: payload,
+            }),
+        }),
+
+        // get Posts
+        getPosts: builder.mutation({
+            query: (payload) => ({
+                url: "/posts",
+                method: "GET",
+                body: payload,
+            }),
+        }),
     }),
 });
 
-export const { useSignupUserMutation, useLoginUserMutation, useLogoutUserMutation, useUpdateUserMutation, useUploadUserPictureMutation } = appApi;
+export const {
+  useSignupUserMutation,
+  useLoginUserMutation,
+  useLogoutUserMutation,
+  useUpdateUserMutation,
+  useUploadUserPictureMutation,
+  useCreatePostMutation,
+  useGetPostsMutation,
+} = appApi;
 
 export default appApi;

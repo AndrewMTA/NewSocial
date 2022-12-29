@@ -22,18 +22,11 @@
 }
 
 
-.modalInput {
+.CropModal .modalInput {
     margin-top: 30px;
     padding: 10px 50px;
 }
 
-.Close {
-    align-self: end;
-    position: absolute;
-    margin-top: -180px;
-    margin-left: 370px;
-    background-color: rgba(0, 0, 255, 0.382);
-}
 
 .inputWrap {
     display: flex;

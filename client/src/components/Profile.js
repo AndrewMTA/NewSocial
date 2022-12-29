@@ -40,7 +40,7 @@
 
                   </div>
                   <div className='textWraped'>
-                 <div className='NameBox'><b>New User</b><i className='position'> {user?.position || ''}{user?.work || ''}</i><div onClick={() => setIsOpen(true)} className='Edit'>Edit Profile</div></div>
+                 <div className='NameBox'><b>{user?.firstName || user?.lastName ? `${user?.firstName} ${user?.lastName}` : 'New User'}</b><i className='position'> {user?.position || ''}{user?.work || ''}</i><div onClick={() => setIsOpen(true)} className='Edit'>Edit Profile</div></div>
                {user?.bio || ''}
                   {
                     <Modal open={isOpen} onClose={() => setIsOpen(false)}/>

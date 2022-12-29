@@ -20,7 +20,7 @@
     bottom: 0;
 }
 
-.picContainer {
+.Modal .picContainer {
   position: absolute;
   width: 100px;
   height: 100px;
@@ -58,15 +58,15 @@
   bottom: 4px;
 }
 
-.modalInput {
-    margin-top: 30px;
+.Modal .modalInput {
+    margin-top: 12px;
     padding: 10px 50px;
 }
 .Close {
     align-self: end;
     position: absolute;
-    margin-top: -180px;
-    margin-left: 370px;
+    top: 20px;
+    right: 20px;
     background-color: rgba(0, 0, 255, 0.382);
 }
 

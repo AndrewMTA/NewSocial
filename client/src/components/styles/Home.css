@@ -65,7 +65,7 @@
 
 .innerColumns {
  display: flex;
-
+ margin-bottom: 30px;
 
 }
 .textWrap {
@@ -162,15 +162,16 @@ border-bottom-right-radius: 0px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
-.profile {
-    width: 63px;
-    height: 63px;
-    border-radius: 200px;
-    object-fit: cover;    
-}
-.picContainer {
-    padding: 10px;
 
+.MainContent .profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.MainContent .picContainer {
+    padding: 12px;
 }
 
 .posts {

@@ -15,6 +15,8 @@ const Modal = ({ open, onClose }) => {
 
   const [cropImage, setCropImage] = useState("");
   const [isOpen, setIsOpen] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [bio, setIsBio] = useState("");
   const [position, setIsPosition] = useState("");
   const [work, setIsWork] = useState("");
@@ -22,20 +24,23 @@ const Modal = ({ open, onClose }) => {
   const [uploadUserPicture] = useUploadUserPictureMutation();
 
   useEffect(()=> {
-    axios.get('/user/' + _id)
-    .then(({data}) => {
-      const user = data.user;
-      setIsBio(user.bio);
-      setIsPosition(user.position);
-      setIsWork(user.work)
-    })
-    .catch((e) => console.log(e))
+    // axios.get('/user/' + _id)
+    // .then(({data}) => {
+    //   const user = data.user;
+    //
+    // })
+    // .catch((e) => console.log(e))
+    setFirstName(user.firstName);
+    setLastName(user.lastName);
+    setIsBio(user.bio);
+    setIsPosition(user.position);
+    setIsWork(user.work)
   }, [_id])
 
   function handleSubmit(e) {
     e.preventDefault();
     // update logic
-    updateUser({_id, bio, position, work}).then(({ data }) => {
+    updateUser({_id, firstName, lastName, bio, position, work}).then(({ data }) => {
       if (data) {
         console.log("profile updated");
         onClose();
@@ -95,6 +100,18 @@ const Modal = ({ open, onClose }) => {
           <img className='editPic' src={PlusIcon}/>
         </div>
         <div className="inputWrap">
+          <input
+            onChange={(e) => setFirstName(e.target.value)}
+            value={firstName}
+            className="modalInput"
+            placeholder="First Name"
+          />
+          <input
+            onChange={(e) => setLastName(e.target.value)}
+            value={lastName}
+            className="modalInput"
+            placeholder="Last Name"
+          />
           <input
             onChange={(e) => setIsWork(e.target.value)}
             value={work}
