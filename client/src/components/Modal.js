@@ -2,16 +2,19 @@ import React, { useEffect } from "react";
 import "./styles/Modal.css";
 import ProfilePic from "./assets/Default.png";
 import PlusIcon from './assets/plus.png'
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import { useUpdateUserMutation, useUploadUserPictureMutation } from "../services/appApi";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import CropModal from './CropModal';
 
 const Modal = ({ open, onClose }) => {
   const user = useSelector(state => state.user);
   const { _id, picture } = user || {};
 
+  const [cropImage, setCropImage] = useState("");
+  const [isOpen, setIsOpen] = useState(false);
   const [bio, setIsBio] = useState("");
   const [position, setIsPosition] = useState("");
   const [work, setIsWork] = useState("");
@@ -40,6 +43,19 @@ const Modal = ({ open, onClose }) => {
     });
   }
 
+  function onCropModalClose(picture) {
+    if (!(picture && picture.length)) {
+      setIsOpen(false);
+      setCropImage("");
+      return;
+    }
+
+    updateUser({_id, picture}).then(({ data }) => {
+      setIsOpen(false);
+      setCropImage("");
+    });
+  };
+
   function onEditPic(e) {
     e.preventDefault();
     const input = document.createElement('input');
@@ -49,9 +65,18 @@ const Modal = ({ open, onClose }) => {
       if (input.files.length === 0) return;
       const picture = input.files[0];
       console.log('picture', picture);
-      uploadUserPicture({ _id, picture }).then(({data}) => {
-        console.log("picture updated");
-      });
+      const filereader = new FileReader();
+      filereader.readAsDataURL(picture);
+      filereader.onload = function (e) {
+         const base64 = e.target.result;
+         //console.log('base64', base64);
+         setCropImage(base64);
+         setIsOpen(true);
+      }
+
+      // uploadUserPicture({ _id, picture }).then(({data}) => {
+      //   console.log("picture updated");
+      // });
     }
     input.click();
   }
@@ -94,6 +119,8 @@ const Modal = ({ open, onClose }) => {
             Save
           </button>
       </form>
+
+      <CropModal image={cropImage} open={isOpen} onClose={onCropModalClose}/>
     </div>
   );
 };
