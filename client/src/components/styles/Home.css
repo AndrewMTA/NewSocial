@@ -6,18 +6,18 @@
 }
 
 .SideNav {
-    
+
     border: 1px gray solid;
     padding-bottom: 650px;
-    width: 200px;  
+    width: 200px;
     border-bottom: none;
     border-top: none;
     border-left: none;
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     align-items: center;
     flex:.4;
-  
+
 
 
 }
@@ -65,7 +65,7 @@
 
 .innerColumns {
  display: flex;
-
+ margin-bottom: 30px;
 
 }
 .textWrap {
@@ -91,7 +91,7 @@ textarea:focus {
     border-bottom: 1px solid rgb(43, 131, 230) ;
 
     transition: .3s ease-in-out;
-    
+
 }
 
 .postsColumn {
@@ -116,7 +116,7 @@ margin-top: 30px;
     padding: 5px 3px;
     border-radius: 5px;
     margin: 15px;
-    
+
 }
 
 .brandLogo {
@@ -128,7 +128,7 @@ margin-top: 30px;
     transition: .35s ease-in-out;
     background-color: rgba(194, 206, 255, 0.7);
     cursor: pointer;
-    
+
 }
 
 .PostButton {
@@ -162,14 +162,16 @@ border-bottom-right-radius: 0px;
     margin-bottom: 5px;
     margin-top: 5px;
 }
-.profile {
-    width: 63px;
-    height: 63px;
-    border-radius: 200px;
-}
-.picContainer {
-    padding: 10px;
 
+.MainContent .profile {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+.MainContent .picContainer {
+    padding: 12px;
 }
 
 .posts {
@@ -184,7 +186,7 @@ border-bottom-right-radius: 0px;
 }
 
 .title {
-   
+
     font-weight: 600;
     font-size: 20px;
 
@@ -196,7 +198,7 @@ border-bottom-right-radius: 0px;
     margin: 10px;
     margin-top: 10px;
     border-radius: 10px;
-   
+
 }
 
 .route {
@@ -228,7 +230,7 @@ border-bottom-right-radius: 0px;
 
 .recomentaionsColumn {
     text-align: center;
-  
+
     background-color: white;
     margin-left: 45px;
     margin-top: 30px;
@@ -245,7 +247,7 @@ border-bottom-right-radius: 0px;
     .icon2 {
         display: none;
     }
-    
+
 }
 
 
@@ -257,20 +259,20 @@ border-bottom-right-radius: 0px;
         color: aliceblue;
         text-align: center;
         padding: 10px 32px;
-       
+
         cursor: pointer;
-    
+
     }
 
     .postsColumn {
         width: 550px;
     }
-    
+
 .SideNav {
-    
- 
+
+
     flex:.6;
-  
+
 
 
 }
@@ -293,8 +295,8 @@ border-bottom-right-radius: 0px;
     .SideNav {
 
         width: 600px;
-    
-    
+
+
     }
 
     .postsColumn {
@@ -312,9 +314,9 @@ border-bottom-right-radius: 0px;
         color: aliceblue;
         text-align: center;
         padding: 10px 22px;
-        
+
         cursor: pointer;
-    
+
     }
 
     .navOption:Hover {
@@ -332,4 +334,3 @@ border-bottom-right-radius: 0px;
         width: 400px;
     }
 }
-

@@ -10,11 +10,10 @@ const rooms = ['general', 'tech', 'finance', 'crypto'];
 const cors = require('cors');
 const mongoose = require("mongoose");
 
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
+app.use(express.urlencoded({extended: true, limit: '12MB'}));
+app.use(express.json({limit: '12MB'}));
 app.use(cors());
 const postRoutes = require('./routes/postRoute')
-
 
 
 

@@ -1,14 +1,14 @@
- 
+
     import Navbar from "./Navbar";
     import React, { useContext, useEffect, useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { AppContext } from "../context/appContext";
 import MessageForm from "./MessageForm";
-import "./MessageForm.css";
+import "./styles/MessageForm.css";
     const Messages = () => {
-     
-      
+
+
       return (
             <>
             <div className="Container">
@@ -19,9 +19,9 @@ import "./MessageForm.css";
             </div>
         </>
 
-            
+
 
       )
     }
-    
+
     export default Messages

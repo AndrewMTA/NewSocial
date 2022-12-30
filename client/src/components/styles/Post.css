@@ -1,0 +1,90 @@
+.Post {
+  display: flex;
+  background-color: white;
+
+  width: 100%;
+  margin-top: 1px;
+  padding-bottom: 7px;
+}
+
+.Post:last-child {
+  border-radius: 5px;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+}
+
+.Post-Picture {
+  width: 100px;
+  height: 100px;
+}
+
+.Post-Picture img {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  padding: 12px;
+}
+
+.Post-Content {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+}
+
+.Post-Content > div {
+  flex-width: 100%;
+}
+
+.Post-Header {
+  margin-top: 14px;
+}
+
+.Post-Name {
+  padding-left: 12px;
+  font-weight: bold;
+}
+
+.Post-Position {
+  padding-left: 7px;
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.Post-Company::before {
+  content: "@";
+}
+
+.Post-Company {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.Post-Time {
+  float: right;
+  font-style: italic;
+  padding-right: 24px;
+  font-size: 0.8em;
+}
+
+.Post-Description {
+  padding: 4px 12px 8px 12px;
+}
+
+.Post-Footer {
+  display: flex;
+  flex-direction: row;
+}
+
+.Post-Footer > div {
+  width: 25%;
+  text-align: center;
+}
+
+.Post-Footer img {
+  height: 24px;
+  cursor: pointer;
+}
+
+.Post-Footer img:hover {
+  filter: invert(19%) sepia(69%) saturate(1970%) hue-rotate(214deg) brightness(94%) contrast(100%);
+}

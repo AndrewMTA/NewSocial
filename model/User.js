@@ -15,6 +15,12 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: [true, "Can't be blank"]
   },
+  firstName: {
+    type: String
+  },
+  lastName: {
+    type: String
+  },
   bio: {
     type: String
   },
@@ -25,7 +31,7 @@ const UserSchema = new mongoose.Schema({
     type: String
   },
   picture: {
-    type: String,
+    type: String
   },
   newMessages: {
     type: Object,

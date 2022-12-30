@@ -1,0 +1,140 @@
+.CropModal {
+    position: absolute;
+    padding: 100px;
+    padding-bottom: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    z-index: 1000;
+    padding-top: 200px;
+    border-radius: 10px;
+}
+
+.CropOverLay {
+    background-color: rgba(0, 0, 0, 1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2000;
+}
+
+
+.CropModal .modalInput {
+    margin-top: 30px;
+    padding: 10px 50px;
+}
+
+
+.inputWrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.crop-container {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 50px;
+}
+
+.topControls {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  width: 50%;
+  transform: translateX(-50%);
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.bottomControls {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+
+  cursor: pointer;
+  text-align: center;
+  color: #777;
+}
+
+.bottomControls > div {
+  width: 50%;
+  height: 100%;
+  align-items: center;
+  display: flex;
+}
+
+.bottomControls > div:hover {
+  background: #EEE;
+  color: #333;
+}
+
+.bottomControls > div:nth-child(1) {
+  border-bottom-left-radius: 10px;
+}
+
+.bottomControls > div:nth-child(2) {
+  border-left: 1px solid #BBB;
+  border-bottom-right-radius: 10px;
+}
+
+.bottomControls > div > div {
+  width: 100%;
+  text-align: center;
+}
+
+
+.slider {
+  padding: 22px 0px;
+}
+
+.zoom-range {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  height: 2px;
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+  background: #3f51b5;
+  width: 100%;
+  padding: 0px;
+}
+
+.zoom-range::-moz-range-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #3f51b5;
+  background: #3f51b5;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.zoom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #3f51b5;
+  background: #3f51b5;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  transition: box-shadow 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
+
+.controls:hover input[type='range']::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px 8px rgba(63, 81, 181, 0.16);
+  border-radius: 50%;
+}
+
+.controls:hover input[type='range']::-moz-range-thumb {
+  box-shadow: 0px 0px 0px 8px rgba(63, 81, 181, 0.16);
+}

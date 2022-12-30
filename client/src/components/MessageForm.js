@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useRef, useState } from "react";
 import { Button, Col, Form, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { AppContext } from "../context/appContext";
-import "./MessageForm.css";
+import "./styles/MessageForm.css";
 function MessageForm() {
     const [message, setMessage] = useState("");
     const user = useSelector((state) => state.user);

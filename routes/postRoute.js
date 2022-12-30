@@ -1,29 +1,55 @@
 const router = require('express').Router();
 const Post = require('../model/Post');
 
-router.post("/create", (req, res) => {
+router.post("/", (req, res) => {
+    const { user, description } = req.body;
+
     const newPost = new Post({
-      description: req.body.description,
+      user,
+      description
     });
-    
-  
+
     newPost
       .save()
-      .then((doc) => console.log(doc))
-      .catch((err) => console.log(err));
+      .then(doc => {
+        doc.populate('user').then(doc => {
+          console.log(doc)
+          res.send(doc);
+        })
+        .catch(e => {
+          console.log(e)
+          res.status(400).json(e.message)
+        });
+      })
+      .catch(e => {
+        console.log(e)
+        res.status(400).json(e.message)
+      });
   });
-  
-  router.get("/posts", (req, res) => {
+
+  router.get("/", (req, res) => {
+    const start = 0;
+
     Post.find()
+      .sort({createdAt: 'desc'})
+      .populate('user')
+      .skip(start)
+      .limit(30)
       .then((items) => res.json(items))
-      .catch((err) => console.log(err));
+      .catch(e => {
+        console.log(e)
+        res.status(400).json(e.message)
+      });
   });
-  
-  router.delete("/delete/:id", (req, res) => {
+
+  router.delete("/:id", (req, res) => {
     console.log(req.params);
     Post.findByIdAndDelete({ _id: req.params.id })
       .then((doc) => console.log(doc))
-      .catch((err) => console.log(err));
+      .catch(e => {
+        console.log(e)
+        res.status(400).json(e.message)
+      });
   });
 
   module.exports = router

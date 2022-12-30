@@ -8,6 +8,7 @@
 
     const Profile = () => {
       const user = useSelector((state) => state.user);
+      const { picture } = user || {};
       const [isOpen, setIsOpen] = useState(false)
       return (
         <div className='Container'>
@@ -23,7 +24,7 @@
               <div className='profileColumn'>
                 <div className='postBox'>
                   <div className='profileContainer'>
-                  <img className='profilePic' src={ProfilePic}/>
+                    <img className='profilePic' src={picture || ProfilePic}/>
                   </div>
                   <div className='textWrap'>
 
@@ -39,7 +40,7 @@
 
                   </div>
                   <div className='textWraped'>
-                 <div className='NameBox'><b>New User</b><i className='position'> {user?.position || ''}{user?.work || ''}</i><div onClick={() => setIsOpen(true)} className='Edit'>Edit Profile</div></div>
+                 <div className='NameBox'><b>{user?.firstName || user?.lastName ? `${user?.firstName} ${user?.lastName}` : 'New User'}</b><i className='position'> {user?.position || ''}{user?.work || ''}</i><div onClick={() => setIsOpen(true)} className='Edit'>Edit Profile</div></div>
                {user?.bio || ''}
                   {
                     <Modal open={isOpen} onClose={() => setIsOpen(false)}/>
