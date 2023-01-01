@@ -5,6 +5,10 @@ export const postsSlice = createSlice({
     name: "post",
     initialState: [],
     reducers: {
+
+      deletePost: function(state, action) {
+        state.items = state.items.filter(item => item.id !== action.payload.id)
+      }
     },
 
     extraReducers: (builder) => {
@@ -14,5 +18,7 @@ export const postsSlice = createSlice({
       builder.addMatcher(appApi.endpoints.getPosts.matchFulfilled, (state, { payload }) => payload || []);
     },
 });
+
+export const { deletePost } = postsSlice.actions
 
 export default postsSlice.reducer;

@@ -29,7 +29,7 @@ export default function Navbar() {
 
     <div onClick={()=> { navigate('/') }} className='navOption'><img className='icon2' src={Home}/><span className="route">Home</span></div>
     <div onClick={()=> { navigate('/user') }} className='navOption'><img  className='icon2' src={Profile}/><span className="route">Profile</span></div>
-    <div onClick={()=> { navigate('/messages') }} className='navOption'><img  className='icon2' src={Messages}/><span className="route">Messages</span></div>
+    <div onClick={()=> { navigate('/user') }} className='navOption'><img  className='icon2' src={Profile}/><span className="route">Groups</span></div>
     <div onClick={onLogout} className='navOption'><img  className='icon2' src={Logout}/><span className="route">Logout</span></div>
     </div>
 

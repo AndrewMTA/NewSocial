@@ -30,7 +30,7 @@ const io = require('socket.io')(server, {
 
 mongoose.set('strictQuery', false);
 
-const MONGODB = process.env.MONGODB || "mongodb://localhost:27017/NewSocial";
+const MONGODB = process.env.MONGODB;
 mongoose.connect(MONGODB, {
   useNewUrlParser:true,
   useUnifiedTopology: true,

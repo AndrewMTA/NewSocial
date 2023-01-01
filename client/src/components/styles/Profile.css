@@ -14,6 +14,13 @@
     margin-top: 50px;
 }
 
+.bg{
+    background-color: white;
+    padding: 10px;
+    border-radius: 5px;
+    padding-bottom: 0px;
+}
+
 .profileColumn {
     width: 100%;
     min-width: 370px;
@@ -22,7 +29,9 @@
     margin-top: 30px;
 
     }
-
+    .ProfilePosition::before {
+        content: " @";
+      }
     .position {
         margin-left: 6px;
     }

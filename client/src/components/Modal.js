@@ -31,7 +31,6 @@ const Modal = ({ open, onClose }) => {
     // })
     // .catch((e) => console.log(e))
     setFirstName(user.firstName);
-    setLastName(user.lastName);
     setIsBio(user.bio);
     setIsPosition(user.position);
     setIsWork(user.work)
@@ -104,13 +103,7 @@ const Modal = ({ open, onClose }) => {
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
             className="modalInput"
-            placeholder="First Name"
-          />
-          <input
-            onChange={(e) => setLastName(e.target.value)}
-            value={lastName}
-            className="modalInput"
-            placeholder="Last Name"
+            placeholder="Name"
           />
           <input
             onChange={(e) => setIsWork(e.target.value)}

@@ -69,16 +69,17 @@ const HomeScreen = () => {
                   return <Post post={post} key={post?._id || i} />;
               })}
             </div>
+        
 
           </div>
           <div className='recomentaionsColumn'>
-            <h3>Recomended for you</h3>
-             <div className='Recomended'><img className="brandLogo" src={Koi}/><div className='info'><span className='title'>The Floor</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-             <div className='Recomended'><img className="brandLogo" src={Leaf}/><div className='info'><span className='title'>KoiFish.AI</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-             <div className='Recomended'><img className="brandLogo" src={Tech}/><div className='info'><span className='title'>Elements</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-             <div className='Recomended'><img className="brandLogo" src={Bond}/><div className='info'><span className='title'>BondLink</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-          </div>
-
+                <h3>Tasks</h3>
+                 <div className='Recomended'><img className="brandLogo" src={Koi}/><div className='info'><span className='title'>The Floor</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
+                 <div className='Recomended'><img className="brandLogo" src={Leaf}/><div className='info'><span className='title'>KoiFish.AI</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
+                 <div className='Recomended'><img className="brandLogo" src={Tech}/><div className='info'><span className='title'>Elements</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
+                 <div className='Recomended'><img className="brandLogo" src={Bond}/><div className='info'><span className='title'>BondLink</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
+              </div>
+          
         </div>
       </div>
 
