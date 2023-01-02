@@ -47,39 +47,8 @@ const HomeScreen = () => {
           <input className='Search' placeholder='Search'/>
         </div>
         <div className='innerColumns'>
-          <div className='postsColumn'>
-
-            <div className='postBox'>
-          <div className='PostWrapper'>
-              <div className='picContainer'>
-                <img className='profile' src={picture || Profile}/>
-              </div>
-              <div className='textWrap'>
-
-              <textarea ref={textAreaEl} placeholder="What's new?"/>
-              <div className='buttonsWrap'>
-                <div></div>
-                <div onClick={onPost} className='PostButton'>Post</div>
-              </div>
-              </div>
-            </div>
-            </div>
-            <div className='posts'>
-              {posts.map(function(post, i){
-                  return <Post post={post} key={post?._id || i} />;
-              })}
-            </div>
-        
-
-          </div>
-          <div className='recomentaionsColumn'>
-                <h3>Tasks</h3>
-                 <div className='Recomended'><img className="brandLogo" src={Koi}/><div className='info'><span className='title'>The Floor</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-                 <div className='Recomended'><img className="brandLogo" src={Leaf}/><div className='info'><span className='title'>KoiFish.AI</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-                 <div className='Recomended'><img className="brandLogo" src={Tech}/><div className='info'><span className='title'>Elements</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-                 <div className='Recomended'><img className="brandLogo" src={Bond}/><div className='info'><span className='title'>BondLink</span> <span><i>AI that specalizes in robot suhshi delivery</i></span></div></div>
-              </div>
           
+        
         </div>
       </div>
 

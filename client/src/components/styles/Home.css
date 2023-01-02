@@ -9,14 +9,14 @@
 
     border: 1px gray solid;
     padding-bottom: 650px;
-    width: 200px;
+    width: 10px;
     border-bottom: none;
     border-top: none;
     border-left: none;
     display: flex;
     flex-direction: column;
     align-items: center;
-    flex:.4;
+    flex:.3;
 
 
 
@@ -49,7 +49,7 @@
  background-color: white;
  display: flex ;
  justify-content: space-between;
- padding: 20px;
+ padding: 10px;
 }
 
 .Search {

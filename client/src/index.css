@@ -24,6 +24,36 @@ code {
 
 }
 
+.profilePosts {
+flex: 1;
+ 
+}
+
+.flexWrap {
+  display: flex;
+  column-gap: 40px;
+  justify-content: center;
+}
+.intro {
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+flex: 1;
+text-align: center;
+padding-top: 10px;
+ 
+  margin-left: 20px;
+}
+
+.selectors{
+  padding: 5px;
+}
+.selectors:hover {
+background-color: rgba(0, 0, 0, 0.173);
+padding: 5px;
+border-radius: 5px;
+transition: .3s ease-in-out;
+cursor: pointer;
+}
 .authRoute {
   color: black;
 }

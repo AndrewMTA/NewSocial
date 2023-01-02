@@ -61,9 +61,8 @@ const handleDelete = async () => {
          
           <div className="Post-Footer">
             <div onClick={()=> { }}><img src={Like}/></div>
-            <div onClick={()=> { }}><img src={Comment}/></div>
+         
             <div onClick={()=> { }}><img src={Share}/></div>
-            <div onClick={()=> { }}><img src={Repost}/></div>
           </div>
         </div>
        </div>

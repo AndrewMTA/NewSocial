@@ -1,16 +1,14 @@
 .Post {
   display: flex;
   background-color: white;
-
+  border-radius: 5px;
   width: 100%;
-  margin-top: 1px;
+  margin-top: 10px;
   padding-bottom: 7px;
 }
 
 .Post:last-child {
   border-radius: 5px;
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
 }
 
 .Post-Picture {

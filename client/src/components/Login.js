@@ -3,6 +3,7 @@ import { useLoginUserMutation } from "../services/appApi";
 import { Link, useNavigate } from "react-router-dom";
 import Design from "./assets/Design.jpg"
 import { AppContext } from "../context/appContext";
+import { useSelector } from "react-redux";
 
 function Login() {
 
@@ -11,6 +12,8 @@ function Login() {
   const navigate = useNavigate();
   const { socket } = useContext(AppContext);
   const [loginUser, { isLoading, error }] = useLoginUserMutation();
+  
+  const user = useSelector((state) => state.user);
   function handleLogin(e) {
       e.preventDefault();
       // login logic
@@ -19,10 +22,11 @@ function Login() {
               // socket work
               socket.emit("new-user");
               // navigate to the chat
-              navigate("/user/");
+              navigate(`/user/${user?._id}`);
           }
       });
   };
+ 
   return (
     <div className="container">
          <div className="TitleWrap">
