@@ -3,9 +3,6 @@
 
 
 
-POST  http://localhost:5000/posts/create
+GET  http://localhost:5000/user/
 Content-Type: application/json
 
-{
-    "description": "hello world joe mama"
-}

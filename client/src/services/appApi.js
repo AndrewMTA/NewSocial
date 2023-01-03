@@ -1,6 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { useParams } from "react-router-dom";
-
 // define a service user a base URL
 
 const appApi = createApi({
@@ -13,8 +11,16 @@ const appApi = createApi({
         // creating the user
         signupUser: builder.mutation({
             query: (user) => ({
-                url: "/user",
+                url: "/user/",
                 method: "POST",
+                body: user,
+            }),
+        }),
+
+        getUser: builder.mutation({
+            query: (user) => ({
+                url:`/user/`,
+                method:"GET",
                 body: user,
             }),
         }),
@@ -89,6 +95,7 @@ export const {
   useUploadUserPictureMutation,
   useCreatePostMutation,
   useGetPostsMutation,
+  useGetUserMutation,
 } = appApi;
 
 export default appApi;

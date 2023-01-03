@@ -47,7 +47,13 @@ const HomeScreen = () => {
           <input className='Search' placeholder='Search'/>
         </div>
         <div className='innerColumns'>
+          <div className='postsColumn'>
+
           
+        
+
+          </div>
+               {/* Post */}
         
         </div>
       </div>

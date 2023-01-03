@@ -29,6 +29,10 @@ flex: 1;
  
 }
 
+.Box {
+  background-color: white;
+}
+
 .flexWrap {
   display: flex;
   column-gap: 40px;

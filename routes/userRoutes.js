@@ -2,7 +2,7 @@ const router = require('express').Router();
 const multer = require('multer');
 const User = require('../model/User');
 
-// creating user
+
 
 router.get('/:id', async(req, res)=> {
   const {id} = req.params;
@@ -12,6 +12,14 @@ router.get('/:id', async(req, res)=> {
   } catch (e) {
     res.status(400).send(e.message);
   }
+});
+
+
+
+router.get('/', function(req, res)  {
+  User.find({}, function (err, users) {
+    res.json(users)
+  })
 });
 
 
