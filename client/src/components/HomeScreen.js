@@ -11,10 +11,12 @@ import Bond from './assets/bond.png'
 import Share from './assets/Share.png'
 import Comment from './assets/Comment.png'
 import Navbar from "./Navbar";
+
 import Post from "./Post";
 import { useState, useNavigate, useEffect, useRef } from 'react'
 import { useSelector} from 'react-redux'
 import { useCreatePostMutation, useGetPostsMutation } from "../services/appApi";
+import Fundraiser from './Fundraiser'
 
 const HomeScreen = () => {
   const [createPost] = useCreatePostMutation();
@@ -42,14 +44,22 @@ const HomeScreen = () => {
       <Navbar/>
 
       <div className='MainContent'>
+      
         <div className='Header'>
           <div>home</div>
           <input className='Search' placeholder='Search'/>
         </div>
+        <div className='TitleWrap'>
+        <h2 className='Title'> Companies rasing funding now</h2>
+        </div>
         <div className='innerColumns'>
-          <div className='postsColumn'>
+        
 
+        <div className="BoxContainer">
           
+          <Fundraiser/>
+   
+        </div>
         
 
           </div>
@@ -58,7 +68,7 @@ const HomeScreen = () => {
         </div>
       </div>
 
-     </div>
+ 
   )
 }
 

@@ -1,0 +1,59 @@
+.BoxContainer{
+    max-width: 1690px;
+    padding-bottom: 25px;
+    column-gap: 5px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  
+  
+  }
+  
+.Banner {
+margin-top: -10px;
+border-top-right-radius: 5px;
+border-top-left-radius: 5px;;
+}
+.contentWrap {
+    margin-left: 10px;
+    padding-bottom: 10px;
+}
+
+.profileP{
+    width: 100px;
+    height: 100px;
+    border-radius: 200px;
+    margin-top: 50px;
+    margin-left: -330px;
+    position: absolute;
+    object-fit: cover;
+   
+}
+
+.NameBox {
+    margin-top: 50px;
+
+}
+  
+  .Box {
+    background-color: white;
+ 
+    margin: 20px;
+    border-radius: 5px;
+
+  }
+  
+
+  .button {
+    text-transform: none;
+    margin-left: 10px;
+    margin-top: 3.5px;
+    font-size: small;
+    padding: 0px 3px;
+    cursor: pointer;
+    color: blue;
+    font-weight: 600;
+    
+
+  }

@@ -53,6 +53,15 @@
 }
 
 
+
+.TitleWrap {
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    justify-items: center;
+}
+
 .FlexContainer {
     display: flex;
     flex-direction: row wrap;
