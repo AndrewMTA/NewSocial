@@ -9,7 +9,8 @@
     import axios from 'axios';
     import { useCreatePostMutation, useGetPostsMutation } from "../services/appApi";
     import {useParams} from 'react-router-dom';
-    import VideoPlayer from 'react-video-js-player'
+
+    import VideoPlayer from "./VideoPlayer";
     const Profile = () => {
       const user = useSelector((state) => state.user);
       const [isOpen, setIsOpen] = useState(false)
@@ -105,8 +106,7 @@
           
                   </div>
                   <div className='intro'>Intoductions
-                  
-                  
+            <VideoPlayer/> 
                   
                   </div>
                  

@@ -31,8 +31,7 @@ const Fundraiser = () => {
             : "New User"}
         </b>
         <i className="button">
-          See more {user?.position || ""}
-        
+        <a href="/user/:id">See more </a>   
         </i>
       </div>
       <div>
