@@ -9,10 +9,10 @@ import Post from "./Post";
 import axios from "axios";
 import { useCreatePostMutation, useGetPostsMutation } from "../services/appApi";
 import { useParams } from "react-router-dom";
-import VideoPlayer from "react-video-js-player";
 import Logo1 from "./assets/Leaf.jpg";
 import DummyPosts from "./DummyPosts";
 import Checkout from "./Checkout";
+import VideoPlayer from "./VideoPlayer";
 const Dummy = () => {
   const user = useSelector((state) => state.user);
   const [isOpen, setIsOpen] = useState(false);
@@ -93,7 +93,11 @@ const Dummy = () => {
               </div>
               <div className="flexWrap">
                 <DummyPosts/>
-                <div className="intro">Intoductions</div>
+                <div className="intro">Intoductions
+              
+                <VideoPlayer/>
+        
+                </div>
               </div>
             </div>
           </div>
