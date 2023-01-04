@@ -85,6 +85,13 @@
   cursor: pointer;
 }
 
+.Post-Pic {
+  width: 500px;
+  margin: 5px;
+  margin-top: 15px;
+  border-radius: 5px;
+}
+
 .Post-Footer img:hover {
   filter: invert(19%) sepia(69%) saturate(1970%) hue-rotate(214deg) brightness(94%) contrast(100%);
 }

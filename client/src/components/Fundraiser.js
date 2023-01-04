@@ -52,7 +52,7 @@ const Fundraiser = () => {
         Lotus
         </b>
         <i className="button">
-          See more {user?.position || ""}
+          <a href="/user/243567632334">See more </a>
         
         </i>
       </div>

@@ -52,6 +52,18 @@
     margin-bottom: 15px;
 }
 
+.intro {
+  background-color: rgb(255, 255, 255);
+  margin-bottom: 20px;
+flex: 1;
+text-align: center;
+padding-top: 10px;
+max-height: 400px;
+ margin-top: 10px;
+ border-radius: 5px;
+  margin-left: 20px;
+}
+
     .profilePic {
         width: 100px;
         height: 100px;
@@ -65,4 +77,14 @@
     .profileContainer {
         padding-bottom: 150px;
 
+    }
+
+    .Invest {
+        margin-left: 50px;
+        background-color: rgb(33, 164, 57);
+        color: aliceblue;
+        padding: 5px;
+        margin-top: -6px;
+        cursor: pointer;
+        border-radius: 5px;
     }

@@ -7,6 +7,7 @@ import Register from "./components/Register";
 
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import Dummy from "./components/Dummy";
 
 
 function App() {
@@ -31,7 +32,8 @@ function App() {
                     )}
            
             
-            <Route path="/user/:id" element={<Profile/>}/>       
+            <Route path="/user/:id" element={<Profile/>}/>  
+            <Route path="/user/243567632334" element={<Dummy/>}/>            
    
       <Route path="/messages" element={<Messages/>}/>
     

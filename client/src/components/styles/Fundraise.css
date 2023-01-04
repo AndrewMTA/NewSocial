@@ -21,13 +21,15 @@ border-top-left-radius: 5px;;
 }
 
 .profileP{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     border-radius: 200px;
     margin-top: 50px;
     margin-left: -330px;
     position: absolute;
     object-fit: cover;
+    background-color: white;
+    border: solid 5px white;
    
 }
 
