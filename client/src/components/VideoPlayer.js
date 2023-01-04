@@ -4,9 +4,9 @@ import introVideo from './videos/video1.mp4'
 import "react-html5video/dist/styles.css"
 const VideoPlayer = () => {
   return (
-<Video autoPlay loop >
+<video autoPlay loop width = "100%"  height = "100%">
     <source src={introVideo} type="video/webm" />
-</Video>
+</video>
   )
 }
 

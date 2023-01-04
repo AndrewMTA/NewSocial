@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./styles/Modal.css";
+import "./styles/Checkout.css";
 import ProfilePic from "./assets/Default.png";
 import PlusIcon from './assets/plus.png'
 import { useState, useCallback } from "react";
@@ -8,7 +8,9 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import CropModal from './CropModal';
-
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
+import 'react-tabs/style/react-tabs.css';
+import {BsCurrencyDollar, BsCreditCard2Front} from 'react-icons/bs';
 
 const Checkout = ({ open, onClose }) => {
   const user = useSelector(state => state.user);
@@ -91,43 +93,74 @@ const Checkout = ({ open, onClose }) => {
   return (
     <div className="OverLay">
       <form onSubmit={handleSubmit} className="Modal">
-        <button type="closer" onClick={onClose} className="Close">
-          x
-        </button>
+        <p className="header-text">
+          Investment Amount
+        </p>
 
-        <div className="picContainer" onClick={onEditPic}>
-          <img className="modalPic" src={picture || ProfilePic} />
-          <img className='editPic' src={PlusIcon}/>
-        </div>
+  
         <div className="inputWrap">
-          <input
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstName}
-            className="modalInput"
-            placeholder="Name"
-          />
+        <p>Amount</p>
+          <div className="Userinput">
+            <BsCurrencyDollar color = "#a4a4a4" size = {19}/>
+            <nobr/>
+            <input
+              onChange={(e) => setFirstName(e.target.value)}
+              value={firstName}
+              className="modalInput"
+              placeholder="Name"
+            />
+          </div>
           <input
             onChange={(e) => setIsWork(e.target.value)}
             value={work}
             className="modalInput"
             placeholder="Company"
           />
-          <input
-            onChange={(e) => setIsPosition(e.target.value)}
-            value={position}
-            className="modalInput"
-            placeholder="Position"
-          />
-          <input
-            value={bio}
-            onChange={(e) => setIsBio(e.target.value)}
-            className="modalInput"
-            placeholder="Bio"
-          />
+          <Tabs className = "card-tabs">
+            <TabList padding = "0px" margin = "0px">
+              <Tab><BsCreditCard2Front/> Card</Tab>
+              <Tab>ACH</Tab>
+              <Tab>Wire</Tab>
+            </TabList>
 
+            <TabPanel className = "TabPanel">
+              <p>Name on Card</p>
+                <input
+                  onChange={(e) => setFirstName(e.target.value)}
+                  value={firstName}
+                  className="NameOnCard"
+                  placeholder="Name on Card"
+                />
+              <br />
+              <div className="Userinput">
+                <BsCreditCard2Front color = "#a4a4a4" size = {19}/>
+                <nobr/>
+                <input
+                  onChange={(e) => setIsWork(e.target.value)}
+                  value={work}
+                  className="CardNumber"
+                  placeholder="Card number"
+                />
+              </div>
+            </TabPanel>
+            <TabPanel>
+              <h2>Any content 2</h2>
+            </TabPanel>
+          </Tabs>
+          
+          <p className = "terms-title">Terms</p>
+          <div className = "terms">
+            <h3 className = "terms-header">Terms of service agreement</h3>
+            <p className = "terms-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          </div>
+          <div className = "agreement">
+            <input type = "checkbox" id = "agree" name = "agree"/>
+            <label for="agree"> I agree to the Terms</label>
+          </div>
         </div>
+
         <button type="submit">
-            Save
+            Continue
           </button>
       </form>
 

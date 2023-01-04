@@ -95,7 +95,7 @@ const Dummy = () => {
                 <DummyPosts/>
                 <div className="intro">Intoductions
               
-                <VideoPlayer/>
+                <VideoPlayer className = "VideoPlayer"/>
         
                 </div>
               </div>
