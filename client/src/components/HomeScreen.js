@@ -15,15 +15,17 @@ import Navbar from "./Navbar";
 import Post from "./Post";
 import { useState, useNavigate, useEffect, useRef } from 'react'
 import { useSelector} from 'react-redux'
-import { useCreatePostMutation, useGetPostsMutation } from "../services/appApi";
+import { useCreatePostMutation, useGetPostsMutation , useGetUserMutation } from "../services/appApi";
 import Fundraiser from './Fundraiser'
 
 const HomeScreen = () => {
   const [createPost] = useCreatePostMutation();
   const [getPosts] = useGetPostsMutation();
+  const [getUser] = useGetUserMutation();
 
   const posts = useSelector((state) => state.posts || []);
   const user = useSelector((state) => state.user);
+  const users = useSelector((state) => state.users || []);
   const { _id, picture } = user || {};
   const textAreaEl = useRef(null);
 
@@ -37,6 +39,7 @@ const HomeScreen = () => {
 
   useEffect(() => {
     getPosts();
+    getUser();
   }, [])
 
   return (

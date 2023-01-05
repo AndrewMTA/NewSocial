@@ -18,10 +18,10 @@ const appApi = createApi({
         }),
 
         getUser: builder.mutation({
-            query: (user) => ({
+            query: (users) => ({
                 url:`/user/`,
                 method:"GET",
-                body: user,
+                body: users,
             }),
         }),
 

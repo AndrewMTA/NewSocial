@@ -14,141 +14,45 @@ import BG3 from "./assets/Back3.png"
 import BG4 from "./assets/Back4.png"
 import BG5 from "./assets/Back5.png"
 import BG1 from "./assets/Back1.png"
-const Fundraiser = () => {
+const Fundraiser = (props) => {
   const user = useSelector((state) => state.user);
+  const users = useSelector((state) => state.users);
+  console.log("users", users);
+  const posts = props.Posts;
   const { _id, picture } = user || {};
 
   return (
     <>
-    <div className="Box">
-        <img className="Banner" src={BG} />
-      <img className="profileP" src={picture} />
-      <div className="contentWrap">
-      <div className="NameBox">
-        <b>
-          {user?.firstName || user?.lastName
-            ? `${user?.firstName} ${user?.lastName}`
-            : "New User"}
-        </b>
-        <i className="button">
-        <a href="/user/:id">See more </a>   
-        </i>
-      </div>
-      <div>
-        <Progress done="54" />
-        $423,452.03 raised
-      </div>
-
-      {user?.bio || ""}
-      </div>
-    </div>
-    <div className="Box">
-    <img className="Banner" src={BG1} />
-      <img className="profileP" src={Logo1} />
-      <div className="contentWrap">
-      <div className="NameBox">
-        <b>
-        Lotus
-        </b>
-        <i className="button">
-          <a href="/user/243567632334">See more </a>
-        
-        </i>
-      </div>
-      <div>
-        <Progress done="25" />
-        $13,452.02 raised
-      </div>
-
-      Garden Ecommerxe
-      </div>
-    </div>
-    <div className="Box">
-    <img className="Banner" src={BG2} />
-      <img className="profileP" src={Logo2} />
-      <div className="contentWrap">
-      <div className="NameBox">
-        <b>
-        The Floor
-        </b>
-        <i className="button">
-          See more {user?.position || ""}
-        
-        </i>
-      </div>
-      <div>
-        <Progress done="82" />
-        $131,152.53 raised
-      </div>
-
-     Interior Design Platform
-     </div>
-    </div>
-    <div className="Box">
-    <img className="Banner" src={BG3} />
-      <img className="profileP" src={Logo3} />
-      <div className="contentWrap">
-      <div className="NameBox">
-        <b>
-        Mint
-        </b>
-        <i className="button">
-          See more {user?.position || ""}
-        
-        </i>
-      </div>
-      <div>
-        <Progress done="14" />
-        $13,452.02 raised
-      </div>
-
-        Mobile Banking
-        </div>
-    </div>
-    <div className="Box">
-    <img className="Banner" src={BG4} />
-      <img className="profileP" src={Logo4} />
-      <div className="contentWrap">
-      <div className="NameBox">
-        <b>
-        Swipe.ai
-        </b>
-        <i className="button">
-          See more {user?.position || ""}
-        
-        </i>
-      </div>
-      <div>
-        <Progress done="74" />
-        $1,213,452.21 raised
-      </div>
-
-     Artificial Intelligience 
-     </div>
-    </div>
-    <div className="Box">
-    <img className="Banner" src={BG5} />
-      <img className="profileP" src={Logo5} />
-      <div className="contentWrap">
-      <div className="NameBox">
-        <b>
-        GoFleet
-        </b>
-        <i className="button">
-          See more {user?.position || ""}
-        
-        </i>
-      </div>
-      <div>
-        <Progress done="36" />
-        $9,452.38 raised
-      </div>
-
-      Self Driving Car Data
-    </div>
-    </div>
+    
    
+    {users?.map((data, index) => {
+          return (
+          <> 
+             <div className="Box">
+              <img className="Banner" src={BG} />
+              <img className="profileP" src={data.picture} />
+              <div className="contentWrap">
+              <div className="NameBox">
+                <b>
+                  {data?.firstName || data?.lastName
+                    ? `${data?.firstName} ${data?.lastName}`
+                    : "New User"}
+                </b>
+                <i className="button">
+                <a href="/user/:id">See more </a>   
+                </i>
+              </div>
+              <div>
+                <Progress done="54" />
+                $423,452.03 raised
+              </div>
 
+              {data?.bio || ""}
+              </div>
+            </div>
+          </>);
+        })
+    }
     </>
   );
 };

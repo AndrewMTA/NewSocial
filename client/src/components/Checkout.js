@@ -11,6 +11,8 @@ import CropModal from './CropModal';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import {BsCurrencyDollar, BsCreditCard2Front} from 'react-icons/bs';
+import CreditCardInput from 'react-credit-card-input';
+
 
 const Checkout = ({ open, onClose }) => {
   const user = useSelector(state => state.user);
@@ -142,6 +144,7 @@ const Checkout = ({ open, onClose }) => {
                   placeholder="Card number"
                 />
               </div>
+              
             </TabPanel>
             <TabPanel>
               <h2>Any content 2</h2>

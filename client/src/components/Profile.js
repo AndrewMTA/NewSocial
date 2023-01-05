@@ -7,7 +7,7 @@
     import {  useSelector } from "react-redux";
     import Post from './Post';
     import axios from 'axios';
-    import { useCreatePostMutation, useGetPostsMutation } from "../services/appApi";
+    import { useCreatePostMutation, useGetPostsMutation, useGetUserMutation } from "../services/appApi";
     import {useParams} from 'react-router-dom';
 
     import VideoPlayer from "./VideoPlayer";
@@ -16,9 +16,13 @@
       const [isOpen, setIsOpen] = useState(false)
       const [getPosts] = useGetPostsMutation();
       const [createPost] = useCreatePostMutation();
+      const [getUser] = useGetUserMutation();
+      const users = useSelector((state) => state.users || []);
+
      
     
       const posts = useSelector((state) => state.posts || []);
+
       const { _id, picture } = user || {};
       const textAreaEl = useRef(null);
     
@@ -32,6 +36,8 @@
     
       useEffect(() => {
         getPosts();
+        getUser();
+
       }, [])
     
   
